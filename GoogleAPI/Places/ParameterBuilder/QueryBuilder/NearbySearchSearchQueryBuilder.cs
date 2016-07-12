@@ -1,4 +1,4 @@
-using GoogleAPI.Places.ParameterBuilder.Fluent;
+using GoogleAPI.Places.ParameterBuilder.Interfaces;
 using GoogleAPI.Places.Types;
 
 namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder

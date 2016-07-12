@@ -1,7 +1,11 @@
 using GoogleAPI.Places.Types;
 
-namespace GoogleAPI.Places.ParameterBuilder.Fluent
+namespace GoogleAPI.Places.ParameterBuilder.Interfaces
 {
+  /// <summary>
+  /// A Nearby Search lets you search for places within a specified area. 
+  /// You can refine your search request by supplying keywords or specifying the type of place you are searching for.
+  /// </summary>
   public interface INearbySearchSearchQueryBuilder: ISearchQueryBuilder
   {
     INearbySearchSearchQueryBuilder Radius( int radius );

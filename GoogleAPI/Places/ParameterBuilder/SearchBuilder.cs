@@ -1,5 +1,5 @@
 using System;
-using GoogleAPI.Places.ParameterBuilder.Fluent;
+using GoogleAPI.Places.ParameterBuilder.Interfaces;
 using GoogleAPI.Places.ParameterBuilder.QueryBuilder;
 
 namespace GoogleAPI.Places.ParameterBuilder
@@ -26,6 +26,11 @@ namespace GoogleAPI.Places.ParameterBuilder
     public ITextSearchSearchQueryBuilder TextSearch()
     {
       return new TextSearchSearchQueryBuilder( _apiKey );
+    }
+
+    public IRadarSearchSearchQueryBuilder RadarSearch()
+    {
+      return new RadarSearchSearchQueryBuilder( _apiKey );
     }
   }
 }

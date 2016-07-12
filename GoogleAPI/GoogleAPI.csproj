@@ -49,16 +49,18 @@
     </Compile>
     <Compile Include="Places\ApiParameters.cs" />
     <Compile Include="Places\Entities\PlacesApiResponsePhoto.cs" />
-    <Compile Include="Places\ParameterBuilder\Fluent\INearbySearchSearchQueryBuilder.cs" />
-    <Compile Include="Places\ParameterBuilder\Fluent\ISearchQueryBuilder.cs" />
-    <Compile Include="Places\ParameterBuilder\Fluent\ISearchBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\Interfaces\INearbySearchSearchQueryBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\Interfaces\IRadarSearchSearchQueryBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\Interfaces\ISearchQueryBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\Interfaces\ISearchBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\QueryBuilder\RadarSearchSearchQueryBuilder.cs" />
     <Compile Include="Places\SearchApiClient.cs" />
     <Compile Include="Places\Entities\PlacesApiLocationPoint.cs" />
     <Compile Include="Places\Entities\PlacesApiResponse.cs" />
     <Compile Include="Places\Entities\PlacesApiResponseGeometry.cs" />
     <Compile Include="Places\Entities\PlacesApiResponseResult.cs" />
     <Compile Include="Places\Entities\PlacesApiViewPort.cs" />
-    <Compile Include="Places\ParameterBuilder\Fluent\ITextSearchSearchQueryBuilder.cs" />
+    <Compile Include="Places\ParameterBuilder\Interfaces\ITextSearchSearchQueryBuilder.cs" />
     <Compile Include="Places\ParameterBuilder\QueryBuilder\NearbySearchSearchQueryBuilder.cs" />
     <Compile Include="Places\ParameterBuilder\QueryBuilder\QueryBuilderBase.cs" />
     <Compile Include="Places\ParameterBuilder\QueryBuilder\SearchQueryBuilderBase.cs" />

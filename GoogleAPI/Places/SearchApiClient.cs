@@ -1,5 +1,5 @@
 ﻿using GoogleAPI.Places.Entities;
-using GoogleAPI.Places.ParameterBuilder.Fluent;
+using GoogleAPI.Places.ParameterBuilder.Interfaces;
 
 namespace GoogleAPI.Places
 {

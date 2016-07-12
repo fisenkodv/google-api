@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using GoogleAPI.Places.ParameterBuilder.Fluent;
+using GoogleAPI.Places.ParameterBuilder.Interfaces;
 
 namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
 {
-  internal abstract class QueryBuilderBase: ISearchQueryBuilder
+  internal abstract class QueryBuilderBase : ISearchQueryBuilder
   {
     private readonly List<KeyValuePair<string, string>> _parameters;
 
