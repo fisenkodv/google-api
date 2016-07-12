@@ -35,3 +35,4 @@ IRadarSearchSearchQueryBuilder radarQueryBuilder =
     .Keyword( "bank" )
     .Location( 42.201154, -85.580002 );
 PlacesApiResponse response = new SearchApiClient( radarQueryBuilder ).Search()
+```
