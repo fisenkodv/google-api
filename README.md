@@ -27,6 +27,7 @@ PlacesApiResponse response = new SearchApiClient( textQueryBuilder ).Search()
 ```
 
 ### Radar Search
+```csharp
 string apiKey = "API_KEY";
 IRadarSearchSearchQueryBuilder radarQueryBuilder =
   SearchBuilder.Create( apiKey )
