@@ -14,7 +14,7 @@ namespace GoogleAPI.Places.ParameterBuilder.Interfaces
     ITextSearchSearchQueryBuilder Query( string query );
     ITextSearchSearchQueryBuilder Location( double latitude, double longitude );
     ITextSearchSearchQueryBuilder Radius( int radius );
-    ITextSearchSearchQueryBuilder Language( string language );
+    ITextSearchSearchQueryBuilder Language( Languages language );
     ITextSearchSearchQueryBuilder Price( int? minprice, int? maxprice );
     ITextSearchSearchQueryBuilder PageToken( string pageToken );
     ITextSearchSearchQueryBuilder Type( SearchTypes type );

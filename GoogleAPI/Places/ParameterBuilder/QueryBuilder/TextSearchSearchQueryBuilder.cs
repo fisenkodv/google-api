@@ -30,7 +30,7 @@ namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
       return this;
     }
 
-    public ITextSearchSearchQueryBuilder Language( string language )
+    public ITextSearchSearchQueryBuilder Language( Languages language )
     {
       SetLanguage( language );
       return this;

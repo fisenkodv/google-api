@@ -12,7 +12,7 @@ namespace GoogleAPI.Places.ParameterBuilder.Interfaces
     IRadarSearchSearchQueryBuilder Location( double latitude, double longitude );
     IRadarSearchSearchQueryBuilder Radius( int radius );
     IRadarSearchSearchQueryBuilder Keyword( string keyword );
-    IRadarSearchSearchQueryBuilder Language( string language );
+    IRadarSearchSearchQueryBuilder Language( Languages language );
     IRadarSearchSearchQueryBuilder Price( int? minprice, int? maxprice );
     IRadarSearchSearchQueryBuilder Names( params string[] names );
     IRadarSearchSearchQueryBuilder Type( SearchTypes type );

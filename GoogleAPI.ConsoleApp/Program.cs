@@ -5,6 +5,7 @@ using System.Linq;
 using GoogleAPI.Places.Entities;
 using GoogleAPI.Places.ParameterBuilder;
 using GoogleAPI.Places.ParameterBuilder.Interfaces;
+using GoogleAPI.Places.Types;
 
 namespace GoogleAPI.ConsoleApp
 {
@@ -12,14 +13,15 @@ namespace GoogleAPI.ConsoleApp
   {
     static void Main( string[] args )
     {
-      string apiKey = "API_KEY";
+      string apiKey = args[0];
 
       INearbySearchSearchQueryBuilder searchQueryBuilder =
         SearchBuilder.Create( apiKey )
         .NearbySearch()
         .Radius( 1000 )
         .Keyword( "bank" )
-        .Location( 42.201154, -85.580002 );
+        .Location( 42.201154, -85.580002 )
+        .Language( Languages.English );
 
       ShowResults( new SearchApiClient( searchQueryBuilder ).Search(), "Nearby Search" );
 

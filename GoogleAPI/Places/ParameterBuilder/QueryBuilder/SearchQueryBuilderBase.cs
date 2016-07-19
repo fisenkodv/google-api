@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Reflection;
 using GoogleAPI.Places.Types;
 
 namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
@@ -35,9 +37,10 @@ namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
       AddParameter( ApiParameters.Keyword, keyword );
     }
 
-    public void SetLanguage( string language )
+    public void SetLanguage( Languages language )
     {
-      AddParameter( ApiParameters.Language, language );
+      LanguageCodeAttribute languageCodeAttribute = GetLanguageCodeAttribute(language);
+      AddParameter( ApiParameters.Language, languageCodeAttribute?.Code );
     }
 
     public void SetPrice( int? minprice, int? maxprice )
@@ -62,6 +65,19 @@ namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
     public void SetType( SearchTypes type )
     {
       AddParameter( ApiParameters.Type, type.ToString().ToLowerInvariant() );
+    }
+
+    public LanguageCodeAttribute GetLanguageCodeAttribute( Languages language )
+    {
+      MemberInfo memberInfo = typeof( Languages )
+        .GetMember( language.ToString() )
+        .FirstOrDefault();
+
+      LanguageCodeAttribute attribute = (LanguageCodeAttribute)memberInfo?
+        .GetCustomAttributes( typeof( LanguageCodeAttribute ), false )
+        .FirstOrDefault();
+
+      return attribute;
     }
   }
 }

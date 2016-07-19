@@ -36,7 +36,7 @@ namespace GoogleAPI.Places.ParameterBuilder.QueryBuilder
       return this;
     }
 
-    public INearbySearchSearchQueryBuilder Language( string language )
+    public INearbySearchSearchQueryBuilder Language( Languages language )
     {
       SetLanguage( language );
       return this;

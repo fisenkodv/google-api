@@ -65,6 +65,7 @@
     <Compile Include="Places\ParameterBuilder\QueryBuilder\QueryBuilderBase.cs" />
     <Compile Include="Places\ParameterBuilder\QueryBuilder\SearchQueryBuilderBase.cs" />
     <Compile Include="Places\ParameterBuilder\QueryBuilder\TextSearchSearchQueryBuilder.cs" />
+    <Compile Include="Places\Types\Languages.cs" />
     <Compile Include="Places\Types\RankBy.cs" />
     <Compile Include="ApiClient.cs" />
     <Compile Include="Places\ParameterBuilder\SearchBuilder.cs" />
