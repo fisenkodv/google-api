@@ -1,4 +1,4 @@
-#Google API
+# Google API
 
 ## [Google Places API](https://developers.google.com/places/web-service/)
 
