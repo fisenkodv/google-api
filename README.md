@@ -1,39 +1,61 @@
 #Google API
 
-## Search API (https://developers.google.com/places/web-service/search)
+## [Google Places API](https://developers.google.com/places/web-service/)
+
+## Place Search (https://developers.google.com/places/web-service/search)
 ### Nearby Search
 
 ```csharp
-string apiKey = "API_KEY";
-INearbySearchSearchQueryBuilder searchQueryBuilder =
-  SearchBuilder.Create( apiKey )
-    .TextSearch()
-    .Radius( 100 )
-    .Query( "bank" )
-    .Location( 42.201154, -85.580002 );
-PlacesApiResponse response = new SearchApiClient( searchQueryBuilder ).Search()
+ GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
+INearbyHttpQueryBuilder searchQueryBuilder =
+  PlacesBuilder.Create(_clientSecrets)
+    .NearbySearch()
+    .Radius(1000)
+    .Keyword("bank")
+    .Location(42.201154, -85.580002)
+    .Language(Languages.English);
+
+NearbyResult results = await SearchClient.Create().NearbySearch(searchQueryBuilder);
 ```
 
 ### Text Search
 ```csharp
-string apiKey = "API_KEY";
-ITextSearchSearchQueryBuilder textQueryBuilder =
-  SearchBuilder.Create( apiKey )
+GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
+ITextHttpQueryBuilder textQueryBuilder =
+  PlacesBuilder.Create(_clientSecrets)
     .TextSearch()
-    .Radius( 100 )
-    .Query( "bank" )
-    .Location( 42.201154, -85.580002 );
-PlacesApiResponse response = new SearchApiClient( textQueryBuilder ).Search()
+    .Radius(100)
+    .Query("bank")
+    .Location(42.201154, -85.580002);
+
+TextResult results = await SearchClient.Create().TextSearch(textQueryBuilder);
 ```
 
 ### Radar Search
 ```csharp
-string apiKey = "API_KEY";
-IRadarSearchSearchQueryBuilder radarQueryBuilder =
-  SearchBuilder.Create( apiKey )
+GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
+IRadarHttpQueryBuilder radarQueryBuilder =
+  PlacesBuilder.Create(_clientSecrets)
     .RadarSearch()
-    .Radius( 1000 )
-    .Keyword( "bank" )
-    .Location( 42.201154, -85.580002 );
-PlacesApiResponse response = new SearchApiClient( radarQueryBuilder ).Search()
+    .Radius(1000)
+    .Keyword("bank")
+    .Location(42.201154, -85.580002);
+
+RadarResult results = await SearchClient.Create().RadarSearch(radarQueryBuilder);
+```
+
+## Place Autocomplete (https://developers.google.com/places/web-service/autocomplete)
+
+### Autocomplete
+```csharp
+GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
+IAutocompleteHttpQueryBuilder autocompleteQueryBuilder =
+  PlacesBuilder.Create(_clientSecrets)
+    .Autocomplete()
+    .Radius(1000)
+    .Input("kalamazoo")
+    .Types(PlaceTypes.Cities)
+    .Location(42.201154, -85.580002);
+
+AutocompleteResult results = await SearchClient.Create().Autocomplete(autocompleteQueryBuilder);
 ```
