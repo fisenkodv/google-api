@@ -6,7 +6,7 @@
 ### Nearby Search
 
 ```csharp
- GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
+GoogleClientSecrets clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
 INearbyHttpQueryBuilder searchQueryBuilder =
   PlacesBuilder.Create(_clientSecrets)
     .NearbySearch()
@@ -15,7 +15,7 @@ INearbyHttpQueryBuilder searchQueryBuilder =
     .Location(42.201154, -85.580002)
     .Language(Languages.English);
 
-NearbyResult results = await SearchClient.Create().NearbySearch(searchQueryBuilder);
+NearbyResult results = await PlacesClient.NearbySearch(searchQueryBuilder);
 ```
 
 ### Text Search
@@ -28,7 +28,7 @@ ITextHttpQueryBuilder textQueryBuilder =
     .Query("bank")
     .Location(42.201154, -85.580002);
 
-TextResult results = await SearchClient.Create().TextSearch(textQueryBuilder);
+TextResult results = await PlacesClient.TextSearch(textQueryBuilder);
 ```
 
 ### Radar Search
@@ -41,7 +41,7 @@ IRadarHttpQueryBuilder radarQueryBuilder =
     .Keyword("bank")
     .Location(42.201154, -85.580002);
 
-RadarResult results = await SearchClient.Create().RadarSearch(radarQueryBuilder);
+RadarResult results = await PlacesClient.RadarSearch(radarQueryBuilder);
 ```
 
 ## Place Autocomplete (https://developers.google.com/places/web-service/autocomplete)
@@ -57,5 +57,5 @@ IAutocompleteHttpQueryBuilder autocompleteQueryBuilder =
     .Types(PlaceTypes.Cities)
     .Location(42.201154, -85.580002);
 
-AutocompleteResult results = await SearchClient.Create().Autocomplete(autocompleteQueryBuilder);
+AutocompleteResult results = await PlacesClient.Autocomplete(autocompleteQueryBuilder);
 ```

@@ -13,18 +13,11 @@ namespace GoogleApi.Tests
 {
   public class PlacesApiTests
   {
-    private readonly GoogleClientSecrets _clientSecrets;
-
-    public PlacesApiTests()
-    {
-      _clientSecrets = new GoogleClientSecrets(new[] {(PlacesBuilder.ApiName, "API_KEY") });
-    }
-
     [Fact]
     public async void NearbySearch()
     {
       INearbyHttpQueryBuilder searchQueryBuilder =
-        PlacesBuilder.Create(_clientSecrets)
+        PlacesBuilder.Create(GoogleClientSecretsStorage.Instance.ClientSecrets)
           .NearbySearch()
           .Radius(1000)
           .Keyword("bank")
@@ -41,7 +34,7 @@ namespace GoogleApi.Tests
     public async void TextSearch()
     {
       ITextHttpQueryBuilder textQueryBuilder =
-        PlacesBuilder.Create(_clientSecrets)
+        PlacesBuilder.Create(GoogleClientSecretsStorage.Instance.ClientSecrets)
           .TextSearch()
           .Radius(100)
           .Query("bank")
@@ -57,7 +50,7 @@ namespace GoogleApi.Tests
     public async void RadarSearch()
     {
       IRadarHttpQueryBuilder radarQueryBuilder =
-        PlacesBuilder.Create(_clientSecrets)
+        PlacesBuilder.Create(GoogleClientSecretsStorage.Instance.ClientSecrets)
           .RadarSearch()
           .Radius(1000)
           .Keyword("bank")
@@ -73,7 +66,7 @@ namespace GoogleApi.Tests
     public async void Autocomplete()
     {
       IAutocompleteHttpQueryBuilder autocompleteQueryBuilder =
-        PlacesBuilder.Create(_clientSecrets)
+        PlacesBuilder.Create(GoogleClientSecretsStorage.Instance.ClientSecrets)
           .Autocomplete()
           .Radius(1000)
           .Input("kalamazoo")
