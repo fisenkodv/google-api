@@ -11,12 +11,13 @@
     <PackageLicenseUrl>https://github.com/fisenkodv/google-api/blob/develop/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright (c) 2016 Dmitry Fisenko</Copyright>
     <PackageTags>google-api</PackageTags>
-    <PackageReleaseNotes>v.1.0.0
+    <PackageReleaseNotes>v.1.0.1
 Google Places API
 * Nearby Search
 * Text Search
 * Radar Search
 * Autocomplete</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
