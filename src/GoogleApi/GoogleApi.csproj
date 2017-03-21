@@ -6,17 +6,12 @@
     <Company />
     <Product>Google Api</Product>
     <Description>Library to work with Google Place API from .Net</Description>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/fisenkodv/google-api</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/fisenkodv/google-api/blob/develop/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright (c) 2016 Dmitry Fisenko</Copyright>
     <PackageTags>google-api</PackageTags>
-    <PackageReleaseNotes>v.1.0.1
-Google Places API
-* Nearby Search
-* Text Search
-* Radar Search
-* Autocomplete</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <Version>1.0.1</Version>
   </PropertyGroup>
 

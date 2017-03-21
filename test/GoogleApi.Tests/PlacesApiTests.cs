@@ -2,7 +2,6 @@ using GoogleApi.Places;
 using GoogleApi.Places.Autocomplete.Entities;
 using GoogleApi.Places.Autocomplete.ParameterBuilder;
 using GoogleApi.Places.Autocomplete.Types;
-using GoogleApi.Places.Search;
 using GoogleApi.Places.Search.Entities.Nearby;
 using GoogleApi.Places.Search.Entities.Radar;
 using GoogleApi.Places.Search.Entities.Text;
@@ -32,7 +31,7 @@ namespace GoogleApi.Tests
           .Location(42.201154, -85.580002)
           .Language(Languages.English);
 
-      NearbyResult results = await SearchClient.Create().NearbySearch(searchQueryBuilder);
+      NearbyResult results = await PlacesClient.NearbySearch(searchQueryBuilder);
 
       Assert.NotNull(results);
       Assert.NotEmpty(results.Results);
@@ -48,7 +47,7 @@ namespace GoogleApi.Tests
           .Query("bank")
           .Location(42.201154, -85.580002);
 
-      TextResult results = await SearchClient.Create().TextSearch(textQueryBuilder);
+      TextResult results = await PlacesClient.TextSearch(textQueryBuilder);
 
       Assert.NotNull(results);
       Assert.NotEmpty(results.Results);
@@ -64,7 +63,7 @@ namespace GoogleApi.Tests
           .Keyword("bank")
           .Location(42.201154, -85.580002);
 
-      RadarResult results = await SearchClient.Create().RadarSearch(radarQueryBuilder);
+      RadarResult results = await PlacesClient.RadarSearch(radarQueryBuilder);
 
       Assert.NotNull(results);
       Assert.NotEmpty(results.Results);
@@ -81,7 +80,7 @@ namespace GoogleApi.Tests
           .Types(PlaceTypes.Cities)
           .Location(42.201154, -85.580002);
 
-      AutocompleteResult results = await SearchClient.Create().Autocomplete(autocompleteQueryBuilder);
+      AutocompleteResult results = await PlacesClient.Autocomplete(autocompleteQueryBuilder);
 
       Assert.NotNull(results);
       Assert.NotEmpty(results.Predictions);
