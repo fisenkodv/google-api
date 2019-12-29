@@ -2,7 +2,7 @@
 
 ## [Google Places API](https://developers.google.com/places/web-service/)
 
-## Place Search (https://developers.google.com/places/web-service/search)
+## [Place Search](https://developers.google.com/places/web-service/search)
 ### Nearby Search
 
 ```csharp
@@ -44,7 +44,7 @@ IRadarHttpQueryBuilder radarQueryBuilder =
 RadarResult results = await PlacesClient.RadarSearch(radarQueryBuilder);
 ```
 
-## Place Autocomplete (https://developers.google.com/places/web-service/autocomplete)
+## [Place Autocomplete](https://developers.google.com/places/web-service/autocomplete)
 
 ### Autocomplete
 ```csharp
